@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Polar Bear Supreme</title>
+  <link rel="icon" href="assets/polar_bear.png" type="image/png" sizes="1200x1600">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="/bulma.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/16ae8e710d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+  <img class="image-center" src="assets/igloo.png" id="igloo" width="200px"
+    style="position: relative; visibility: hidden;  z-index: 1000;  margin-top: -150px;"
+    onclick="stopAnimal(igloo); clearInterval(iglooInterval); secondsAdd();">
+
+  <img class="image-center" src="assets/global_warming.png" id="global_warming" width="200px"
+    style="position: relative; visibility: hidden;  z-index: 1000;  margin-top: -180px;"
+    onclick="stopAnimal(global_warming); clearInterval(global_warmingInterval); ">
+
+  <img class="image-center" src="assets/orca.png" id="orca" width="200px"
+    style="position: relative; visibility: hidden;  z-index: 1000;  margin-top: -160px;"
+    onclick="stopAnimal(orca); clearInterval(orcaInterval); ">
+
+  <img class="image-center" src="assets/moose.png" id="moose" width="200px"
+    style="position: relative; visibility: hidden;  z-index: 1001;  margin-top: -215px;"
+    onclick="stopAnimal(moose); clearInterval(mooseInterval); ">
+
+  <img class="image-center" src="assets/wolverine.png" id="wolverine" width="200px"
+    style="position: relative; visibility: hidden;  z-index: 1002;  margin-top: -210px;"
+    onclick="stopAnimal(wolverine); clearInterval(wolverineInterval); ">
+
+  <img class="image-center" src="assets/walrus.png" id="walrus" width="200px"
+    style="position: relative; visibility: hidden;  z-index: 1003;  margin-top: -110px;"
+    onclick="stopAnimal(walrus); clearInterval(walrusInterval); seconds += 100;">
+
+  <img class="image-center" src="assets/snowy_owl.png" id="snowy_owl" width="200px"
+    style="position: relative; visibility: hidden;  z-index: 1004;  margin-top: -245px;"
+    onclick="stopAnimal(snowy_owl); clearInterval(snowy_owlInterval); seconds += 1000;">
+
+  <img class="image-center" src="assets/seal.png" id="seal" width="200px"
+    style="position: relative; visibility: hidden;  z-index: 1005;  margin-top: -300px;"
+    onclick="stopAnimal(seal); clearInterval(sealInterval); seconds += 10000;">
+
+
+
+  <nav class="navbar" style="background-color: transparent;">
+
+    <div class="container">
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-start">
+
+
+          <a class="js-modal-trigger" data-target="modal-js-rank">
+            <figure class="image flex-center"
+              style="position:absolute;top:10%;left:-50px;margin-bottom:-3%;;padding:5px 3px;margin-left: 0px; margin-top: -20px; width:150px;">
+              <img id="trophy" src="assets/bronze_trophy.png">
+            </figure>
+          </a>
+
+          <a class="js-modal-trigger" data-target="modal-js-egg">
+            <figure class="image flex-center"
+              style="position:absolute;top:10%;right:-20px;margin-bottom:-3%;;padding:5px 3px;margin-left: 0px; margin-top: 10px; width:100px;">
+              <img src="assets/egg.png">
+            </figure>
+          </a>
+
+        </div>
+        <center>
+          <div class="container" style="margin-top: 15px;">
+            <h2 class="line" id='' style="padding-top: 0px;">You have been worshipping Polar Bear Supreme
+              for&nbsp;</h2>
+            <h2 class="line tooltip2" style="padding-top: 0px;  "><a id='seconds-counter'
+                style=" color: black; cursor: auto; " class=""></a><span class="tooltiptext2" id="converter"
+                style="font-size: 25px;"></br></span>
+            </h2>
+            <h2 class="line" id='' style="padding-top: 0px;">&nbsp;seconds.</h2>
+
+            <h2 class="line" id=""><br>Your
+
+
+
+            </h2>
+            <h2 class="line tooltip" id="">highest streak<span class="tooltiptext" style="font-size: 15px;">Your highest
+                streak is the most time you've spent playing Polar Bear Supreme consecutively.</br></span>
+            </h2>
+            <h2 class="line" id="" style="margin-left: -5px;">&nbsp;is </h2>
+
+
+            <h2 class="line" id="streak_counter"></h2>
+
+
+
+
+
+            <h2 class="line" id="set_2"></h2>
+
+            <h2 class="subtitle" id='status' style="margin-top: 10px; font-size: 1.25em; color: black"></h2>
+
+          </div>
+        </center>
+        <div class="navbar-end">
+          <div class="navbar-item">
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-transparent is-fullheight-with-navbar">
+    <div class="hero-body" style="padding: 0px;">
+
+
+      <div class="container scale" style="margin-top: -40px">
+
+        <center>
+
+          <div class="spin">
+            <img src="assets/polar_bear.png" id="image" class="" width="500">
+          </div>
+
+
+
+        </center>
+
+
+      </div>
+
+
+
+    </div>
+  </section>
+  <!-- <section class="hero is-medium is-black">
+  <div class="hero-body">
+
+  </div>
+</section> -->
+
+
+
+
+
+  <a style="position:fixed;bottom:10%;right:20px;margin-bottom:-3%;;padding:5px 3px;">
+    <div class="buttons">
+      <button class="button is-success is-large js-modal-trigger" data-target="modal-js-backgrounds"
+        style="margin-right: 15px;">Backgrounds</button>
+
+
+      <button class="button is-info is-large js-modal-trigger" data-target="modal-js-example"
+        onclick="setInterval(displayNextImage, 3000, 'rainbow_skin');">Skins</button>
+
+
+
+    </div>
+
+  </a>
+
+  <a style="position:fixed;bottom:10%;left:30px;margin-bottom:-3%;;padding:5px 3px;">
+    <div class="buttons">
+      <button class="button is-danger is-large" id="current_streak" style="display: inline;"></button>
+      <button class="button is-warning is-large js-modal-trigger" data-target="modal-js-boosts"
+        style="margin-left: 6px; color: #514329"><i class="fa-solid fa-bolt"></i></button>
+
+    </div>
+
+
+
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="modal" id="modal-js-example">
+    <div class="modal-background"></div>
+    <div class="modal-card" style="width: 1000px;">
+      <header class="modal-card-head" style="background-color: #3298DC; border: none; border-radius: 20px 20px 0 0">
+        <p class="modal-card-title flex-center" style="color: white; font-weight: 600; font-size: 2.25em;">Select Skin
+        </p>
+
+
+        <button class="delete" aria-label="close" onclick="cancel()"></button>
+
+      </header>
+      <section class="modal-card-body" style="background-color: white">
+
+
+        <div class="">
+
+
+
+          <div class="container" style="margin-top: 0px">
+
+            <div class="columns">
+              <div class="column">
+
+
+
+
+                <div class="card" style="border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color: #7a7a7a; padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center has-text-white">Default</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="assets/polar_bear.png"
+                        style=" margin-top: 20px; margin-bottom: 0px; width: 290px; height: 217.5px; ">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: -5px;">
+
+
+                      <button class="button is-info is-normal is-fullwidth" id="default_button"
+                        onclick="startDefault()"></button>
+
+
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="card" style="border-radius: 15px; margin-top: 20px;">
+                  <div class="card-content"
+                    style="background-color: #48C774; padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center has-text-white">Polar Bear Rainbow</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img class="fade" id="rainbow_skin" src="assets/polar_bear_purple.png"
+                        style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+
+                      <button class="button is-info is-normal is-fullwidth" id="rainbow_button"
+                        onclick="startTimer()"></button>
+
+
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+                <div class="card" style=" margin-top: 20px; border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color: hsl(48, 100%, 67%); padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center">Pretending Platypus</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="assets/pretending_platypus.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+
+                      <button class="button is-info is-normal is-fullwidth" id="platypus_button"
+                        onclick="startPlatypus()"></button>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="card" style="border-radius: 15px;  margin-top: 20px;">
+                  <div class="card-content"
+                    style="background-color: hsl(48, 100%, 67%); padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center">Simeon's Face</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="assets/simeon_face.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+
+                      <button class="button is-info is-normal is-fullwidth" id="simeon_button"
+                        onclick="startSimeon()"></button>
+
+
+
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+                <div class="card" style=" margin-top: 20px; border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color: hsl(348, 100%, 61%); padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center has-text-white" id="small_question">Water Bear</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <!--                     <figure class="image is-4by3">
+                      <img src="assets/clobear.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure> -->
+                    <figure class="image is-4by3">
+                      <img src="assets/water_bear.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+                      <button class="button is-info is-normal is-fullwidth" id="water_button"
+                        onclick="startWater()"></button>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+              </div>
+              <div class="column">
+
+
+
+
+                <div class="card" style="border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color: #48C774; padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center has-text-white">Polar Bear Fish</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="assets/polar_bear_fish.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+
+                      <button class="button is-info is-normal is-fullwidth" id="fish_button"
+                        onclick="startFish()"></button>
+
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="card" style=" margin-top: 20px; border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color:  #48C774; padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center has-text-white">The Rizzly Bear</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="assets/rizzly_bear.png" style=" margin-top: 20px; margin-bottom: 0px; rotate: 270deg;">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+
+                      <button class="button is-info is-normal is-fullwidth" id="rizz_button"
+                        onclick="startRizz()"></button>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="card" style=" margin-top: 20px; border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color: hsl(48, 100%, 67%); padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center">Ya Like Jazz?</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="assets/bee.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+
+                      <button class="button is-info is-normal is-fullwidth" id="bee_button"
+                        onclick="startBee()"></button>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+                <div class="card" style=" margin-top: 20px; border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color: hsl(348, 100%, 61%); padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center has-text-white" id="small_question">Panda Bear</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <!--                     <figure class="image is-4by3">
+                      <img src="assets/clobear.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure> -->
+                    <figure class="image is-4by3">
+                      <img src="assets/panda_bear.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+                      <button class="button is-info is-normal is-fullwidth" id="panda_button"
+                        onclick="startPanda()"></button>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+                <div class="card" style=" margin-top: 20px; border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color: hsl(348, 100%, 61%); padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center has-text-white" id="small_question">Faulty Egg</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <!--                     <figure class="image is-4by3">
+                      <img src="assets/clobear.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure> -->
+                    <figure class="image is-4by3">
+                      <img src="assets/egg.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+                      <button class="button is-info is-normal is-fullwidth" id="egg_button"
+                        onclick="startEgg()"></button>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+              </div>
+
+
+              <div class="column">
+
+
+
+
+                <div class="card" style="border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color: #48C774; padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center has-text-white">Polar Bear Crown</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="assets/polar_bear_crown.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+
+                      <button class="button is-info is-normal is-fullwidth" id="crown_button"
+                        onclick="startCrown()"></button>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <div class="card" style=" margin-top: 20px; border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color:  #48C774; padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center has-text-white">Koah's Face</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="assets/koah.png" style=" margin-top: 20px; margin-bottom: 0px; ">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+
+                      <button class="button is-info is-normal is-fullwidth" id="koah_button"
+                        onclick="startKoah()"></button>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="card" style=" margin-top: 20px; border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color: hsl(48, 100%, 67%); padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center">Praneel's Pug</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="assets/pug.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+
+                      <button class="button is-info is-normal is-fullwidth" id="pug_button"
+                        onclick="startPug()"></button>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+                <div class="card" style=" margin-top: 20px; border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color: hsl(348, 100%, 61%); padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center has-text-white" id="small_question">Sun Bear</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <!--                     <figure class="image is-4by3">
+                      <img src="assets/clobear.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure> -->
+                    <figure class="image is-4by3">
+                      <img src="assets/sun_bear.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+                      <button class="button is-info is-normal is-fullwidth" id="sun_button"
+                        onclick="startSun()"></button>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="card" style=" margin-top: 20px; border-radius: 15px;">
+                  <div class="card-content"
+                    style="background-color: hsl(348, 100%, 61%); padding: 20px; border-radius: 15px 15px 0px 0px; box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);">
+                    <div class="media flex-center" style="margin-top: 0px;">
+
+
+                      <p class="subtitle is-4 flex-center has-text-white" id="small_question">?????</p>
+
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="card-image">
+                    <!--                     <figure class="image is-4by3">
+                      <img src="assets/clobear.png" style=" margin-top: 20px; margin-bottom: 0px;">
+                    </figure> -->
+                    <div id="big_question">
+                      <h1 class="title is-1 has-text-centered" style="font-size: 200px;">?</h1>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="media flex-center" style="margin-bottom: -10px; margin-top: 10px;">
+
+
+                      <button class="button is-info is-normal is-fullwidth" id="clobear_button"
+                        onclick="startClobear()"></button>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+
+
+      </section>
+      <footer class="modal-card-foot" style="background-color: white; border: none; border-radius: 0 0 20px 20px">
+
+      </footer>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="modal" id="modal-js-rank">
+    <div class="modal-background"></div>
+    <div class="modal-card" style="width: 1000px;">
+      <header class="modal-card-head" style="background-color: #3273dc; border: none; border-radius: 20px 20px 0 0">
+        <p class="modal-card-title flex-center" style="color: white; font-weight: 600; font-size: 2.25em;">Rank
+        </p>
+
+
+        <button class="delete" aria-label="close" onclick="cancel()"></button>
+
+      </header>
+      <section class="modal-card-body" style="background-color: white">
+
+
+        <div class="">
+
+
+
+          <div class="container" style="margin-top: 0px">
+
+            <div class="columns">
+
+
+              <div class="column">
+
+
+
+
+                <div class="tile is-ancestor">
+
+
+                  <div class="tile is-parent">
+                    <article id="rank1" class="tile is-child notification is-link" style="border-radius: 15px;">
+
+                      <p class="title" style="display: inline; margin-left: 2px;">1</p>
+
+                      <figure class="image flex-center is-64x64"
+                        style="position:absolute; margin-top: -57px; margin-left: 370px;">
+                        <img src="assets/bronze_trophy.png">
+                      </figure>
+                      <div class="vertical-center" style="margin-left: 35px;">
+                        <p class="subtitle" style="display: inline;">Bronze Rank</p>
+
+                      </div>
+
+                      <div class="content">
+                        <!-- Content -->
+                      </div>
+                    </article>
+
+                  </div>
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="tile is-ancestor" style="margin-top: -25px !important">
+
+
+                  <div class="tile is-parent">
+                    <article id="rank2" class="tile is-child notification" style="border-radius: 15px;">
+
+                      <p class="title" style="display: inline; margin-left: 2px;">2</p>
+
+                      <figure class="image flex-center is-64x64"
+                        style="position:absolute; margin-top: -57px; margin-left: 370px;">
+                        <img src="assets/silver_trophy.png">
+                      </figure>
+                      <div class="vertical-center" style="margin-left: 35px;">
+                        <p class="subtitle" style="display: inline;">Silver Rank</p>
+
+                      </div>
+
+                      <div class="content">
+                        <!-- Content -->
+                      </div>
+                    </article>
+
+                  </div>
+
+
+
+
+
+                </div>
+
+
+
+
+
+                <div class="tile is-ancestor" style="margin-top: -25px !important">
+
+
+                  <div class="tile is-parent">
+                    <article id="rank3" class="tile is-child notification" style="border-radius: 15px;">
+
+                      <p class="title" style="display: inline; margin-left: 2px;">3</p>
+
+                      <figure class="image flex-center is-64x64"
+                        style="position:absolute; margin-top: -57px; margin-left: 370px;">
+                        <img src="assets/gold_trophy.png">
+                      </figure>
+                      <div class="vertical-center" style="margin-left: 35px;">
+                        <p class="subtitle" style="display: inline;">Gold Rank</p>
+
+                      </div>
+
+                      <div class="content">
+                        <!-- Content -->
+                      </div>
+                    </article>
+
+                  </div>
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="tile is-ancestor" style="margin-top: -25px !important">
+
+
+                  <div class="tile is-parent">
+                    <article id="rank4" class="tile is-child notification" style="border-radius: 15px;">
+
+                      <p class="title" style="display: inline; margin-left: 2px;">4</p>
+
+                      <figure class="image flex-center is-64x64"
+                        style="position:absolute; margin-top: -57px; margin-left: 370px;">
+                        <img src="assets/platinum_trophy.png">
+                      </figure>
+                      <div class="vertical-center" style="margin-left: 35px;">
+                        <p class="subtitle" style="display: inline;">Platinum Rank</p>
+
+                      </div>
+
+                      <div class="content">
+                        <!-- Content -->
+                      </div>
+                    </article>
+
+                  </div>
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="tile is-ancestor" style="margin-top: -25px !important">
+
+
+                  <div class="tile is-parent">
+                    <article id="rank5" class="tile is-child notification" style="border-radius: 15px;">
+
+                      <p class="title" style="display: inline; margin-left: 2px;">5</p>
+
+                      <figure class="image flex-center is-64x64"
+                        style="position:absolute; margin-top: -57px; margin-left: 370px;">
+                        <img src="assets/diamond_trophy.png">
+                      </figure>
+                      <div class="vertical-center" style="margin-left: 35px;">
+                        <p class="subtitle" style="display: inline;">Diamond Rank</p>
+
+                      </div>
+
+                      <div class="content">
+                        <!-- Content -->
+                      </div>
+                    </article>
+
+                  </div>
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="tile is-ancestor" style="margin-top: -25px !important">
+
+
+                  <div class="tile is-parent">
+                    <article id="rank6" class="tile is-child notification" style="border-radius: 15px;">
+
+                      <p class="title" style="display: inline; margin-left: 2px;">6</p>
+
+                      <figure class="image flex-center is-64x64"
+                        style="position:absolute; margin-top: -57px; margin-left: 370px;">
+                        <img src="assets/fur_trophy.png">
+                      </figure>
+                      <div class="vertical-center" style="margin-left: 35px;">
+                        <p class="subtitle" style="display: inline;">Fur Rank</p>
+
+                      </div>
+
+                      <div class="content">
+                        <!-- Content -->
+                      </div>
+                    </article>
+
+                  </div>
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+              </div>
+              <div class="column">
+
+
+
+                <div style="position: fixed">
+                  <div style="width: 460px">
+                    <p class="subtitle is-4">Prestige to rise the ranks and gain bonuses. Prestiging resets your seconds
+                      but gives you a boost and other benefits as a compromise.</p>
+                    <p class="subtitle is-4" id="thisRank">You are currently Bronze Rank, with a 0% boost.</p>
+                    <p class="subtitle is-4" id="nextRank">Prestige to reach Silver Rank, with an 11% boost.</p>
+                    <!--                     0%, 11%, 25%, 43%, 67%, 100% -->
+                  </div>
+                  <button class="button is-primary  is-large"
+                    style="position: absolute; left: 0px; width: 460px;  top: 320px; " id="prestige">
+                    Prestige to Silver Rank
+                  </button>
+                </div>
+              </div>
+
+
+
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+      </section>
+      <footer class="modal-card-foot" style="background-color: white; border: none; border-radius: 0 0 20px 20px">
+
+      </footer>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="modal" id="modal-js-backgrounds">
+    <div class="modal-background"></div>
+    <div class="modal-card" style="width: 1000px;">
+      <header class="modal-card-head" style="background-color: #48c774; border: none; border-radius: 20px 20px 0 0">
+        <p class="modal-card-title flex-center" style="color: white; font-weight: 600; font-size: 2.25em;">Backgrounds
+        </p>
+
+
+        <button class="delete" aria-label="close" onclick="cancel()"></button>
+
+      </header>
+      <section class="modal-card-body" style="background-color: white">
+
+
+        <div class="">
+
+
+
+          <div class="container" style="margin-top: 0px; width: 440px; height: 300px;">
+            <div class="slideshow-container fade2">
+
+              <!-- Full images with numbers and message Info -->
+
+              <div class="Containers">
+
+                <!--                 <img src="assets/default-background.png" style="object-fit:contain; border-radius: 15px;"> -->
+                <div class="container" style="height: 250px; width: 440px">
+                  <h2 class="flex-center subtitle is-5"
+                    style="margin-top: 125px; margin-bottom: 125px; position: absolute; margin-left: 30%; margin-right: 30%">
+                    Default background</h2>
+                </div>
+
+              </div>
+              <div class="Containers">
+
+                <img src="assets/background-1.png" style="object-fit:contain; border-radius: 15px;">
+
+              </div>
+
+              <div class="Containers">
+
+                <img src="assets/background-2.jpg" style="object-f: cover; border-radius: 15px;">
+
+              </div>
+
+
+              <div class="Containers">
+
+                <img src="assets/background-3.jpg" style="object-fit:contain; border-radius: 15px;">
+
+              </div>
+
+              <div class="Containers">
+
+                <img src="assets/background-4.jpeg" style="object-fit:contain; border-radius: 15px;">
+
+              </div>
+
+              <div class="Containers">
+
+                <img src="assets/background-5.png" style="object-fit:contain; border-radius: 15px;">
+
+              </div>
+
+              <!-- Back and forward buttons -->
+              <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <!-- The circles/dots -->
+            <div style="text-align:center">
+              <!--             <span class="dots" onclick="currentSlide(1)"></span>
+            <span class="dots" onclick="currentSlide(2)"></span>
+            <span class="dots" onclick="currentSlide(3)"></span>
+            <span class="dots" onclick="currentSlide(4)"></span>
+            <span class="dots" onclick="currentSlide(5)"></span> -->
+
+
+              <div class="buttons">
+                <button class="button is-primary is-medium is-fullwidth" style="margin-top: -15px;"
+                  id="background-button">Unlock
+                  at Gold Rank</button>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+      </section>
+      <footer class="modal-card-foot" style="background-color: white; border: none; border-radius: 0 0 20px 20px">
+
+      </footer>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- rizzler -->
+
+
+
+
+
+
+
+  <div class="modal" id="modal-js-egg">
+    <div class="modal-background"></div>
+    <div class="modal-card" style="width: 1000px;">
+      <header class="modal-card-head"
+        style="background-color: hsl(171, 100%, 41%); border: none; border-radius: 20px 20px 0 0">
+        <p class="modal-card-title flex-center" style="color: white; font-weight: 600; font-size: 2.25em;">The Egg
+        </p>
+
+
+        <button class="delete" aria-label="close" onclick="cancel()"></button>
+
+      </header>
+      <section class="modal-card-body" style="background-color: white">
+
+
+        <div class="">
+
+          <h2 class="line tooltip3 has-text-black" id="">%<span class="tooltiptext3" style="font-size: 18px;">
+              <div class="columns">
+
+                <div class="column is-one-quarter">
+                  <div style="border-right: 1px solid white;">
+                    0.1%<br>1%<br>2%<br>3%<br>4%<br>10%<br>20%<br>30%<br>
+                  </div>
+                </div>
+
+
+                <div class="column">
+                  Faulty Egg <br>Water Bear <br>Sun Bear<br>Panda Bear<br>+10000 Highest Streak<br>+2500 Highest
+                  Streak<br>+1000 Highest Streak<br>Money Back<br>
+                </div>
+
+              </div>
+            </span>
+          </h2>
+
+          <div class="container" id="egg-container" style="margin-top: 0px; width: 440px; height: 300px;">
+            <figure class="image image-center" style=" width:200px; margin-top: 20px;">
+              <img src="assets/egg.png">
+            </figure>
+
+            <!-- The circles/dots -->
+            <div style="text-align:center">
+              <!--             <span class="dots" onclick="currentSlide(1)"></span>
+            <span class="dots" onclick="currentSlide(2)"></span>
+            <span class="dots" onclick="currentSlide(3)"></span>
+            <span class="dots" onclick="currentSlide(4)"></span>
+            <span class="dots" onclick="currentSlide(5)"></span> -->
+
+
+              <div class="buttons">
+                <button class="button is-primary is-medium is-fullwidth" style="margin-top: 30px;" id="egg-button"
+                  onclick="eggFunc()"></button>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+      </section>
+      <footer class="modal-card-foot" style="background-color: white; border: none; border-radius: 0 0 20px 20px">
+
+      </footer>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="modal" id="modal-js-boosts">
+    <div class="modal-background"></div>
+    <div class="modal-card" style="width: 1000px;">
+      <header class="modal-card-head" style="background-color: #ffdd57; border: none; border-radius: 20px 20px 0 0">
+        <span style="font-size: 30px; margin-left: 5px;"> <i class="fa-solid fa-bolt"></i></span>
+
+        <p class="modal-card-title flex-center" style="color: #514329; font-weight: 600; font-size: 2.25em;">Boosts
+        </p>
+
+
+        <button class="delete" aria-label="close" onclick="cancel()"></button>
+
+      </header>
+      <section class="modal-card-body" style="background-color: white">
+
+
+        <div class="">
+
+
+
+
+
+
+
+
+
+          <p class="title is-2" style="display: inline; margin-left: 10px;">Positive Boosts</p>
+
+          <p class="subtitle" style="display: inline; margin-left: 10px; ">Click on positive boosts to gain seconds</p>
+
+          <div class="container" style="margin-top: 20px; margin-bottom: 40px;">
+
+
+
+
+
+            <div class="tile is-ancestor">
+
+
+              <div class="tile is-parent">
+
+                <article id="" class="tile is-child notification" style="border-radius: 15px;">
+                  <figure class="image flex-center is-96x96"
+                    style="position:absolute; margin-top: 20px; margin-left: 0px;">
+                    <img src="assets/walrus.png">
+                  </figure>
+
+
+
+                  <div class="vertical-center" style="margin-left: 35px;">
+
+                    <p class="title" style="display: inline; margin-left: 96px; margin-top: 0px ">Walrus (1/1000)
+                    </p>
+
+                  </div>
+                  <div class="tile is-child notification is-success"
+                    style="float: right; padding: 15px; margin: -10px;">
+                    <p class="title"
+                      style="display: inline; margin-left: 0px; float: right; margin-top: 0px; margin-bottom: 0px">
+                      +100 Seconds</p>
+                  </div>
+
+                  <div class="content">
+                    <!-- Content -->
+                  </div>
+                </article>
+
+              </div>
+
+
+
+            </div>
+
+
+
+            <div class="tile is-ancestor">
+
+
+              <div class="tile is-parent">
+
+                <article id="" class="tile is-child notification" style="border-radius: 15px;">
+                  <figure class="image flex-center is-96x96"
+                    style="position:absolute; margin-top: 0px; margin-left: 0px;">
+                    <img src="assets/snowy_owl.png">
+                  </figure>
+
+
+
+                  <div class="vertical-center" style="margin-left: 35px;">
+
+                    <p class="title" style="display: inline; margin-left: 96px; ">Snowy Owl (1/5000)</p>
+
+                  </div>
+                  <div class="tile is-child notification is-success"
+                    style="float: right; padding: 15px; margin: -10px;">
+                    <p class="title"
+                      style="display: inline; margin-left: 0px; float: right; margin-top: 0px; margin-bottom: 0px">
+                      +1000 Seconds</p>
+                  </div>
+
+                  <div class="content">
+                    <!-- Content -->
+                  </div>
+                </article>
+
+              </div>
+
+
+            </div>
+
+
+
+
+            <div class="tile is-ancestor">
+
+
+              <div class="tile is-parent">
+
+                <article id="" class="tile is-child notification" style="border-radius: 15px;">
+                  <figure class="image flex-center is-64x64"
+                    style="position:absolute; margin-top: 0px; margin-left: 10px;">
+                    <img src="assets/seal.png">
+                  </figure>
+
+
+
+                  <div class="vertical-center" style="margin-left: 35px;">
+
+                    <p class="title" style="display: inline; margin-left: 96px; ">Seal (1/10000)</p>
+
+                  </div>
+                  <div class="tile is-child notification is-success"
+                    style="float: right; padding: 15px; margin: -10px;">
+                    <p class="title"
+                      style="display: inline; margin-left: 0px; float: right; margin-top: 0px; margin-bottom: 0px">
+                      +10000 Seconds</p>
+                  </div>
+
+                  <div class="content">
+                    <!-- Content -->
+                  </div>
+                </article>
+
+              </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="tile is-ancestor" style="margin-bottom: 40px;">
+
+
+              <div class="tile is-parent">
+
+                <article id="" class="tile is-child notification" style="border-radius: 15px;">
+                  <figure class="image flex-center is-128x128"
+                    style="position:absolute; margin-top: 0px; margin-left: -30px;">
+                    <img src="assets/igloo.png">
+                  </figure>
+
+
+
+                  <div class="vertical-center" style="margin-left: 35px;">
+
+                    <p class="title" style="display: inline; margin-left: 96px; ">Igloo (1/50000)</p>
+
+                  </div>
+                  <div class="tile is-child notification is-success"
+                    style="float: right; padding: 15px; margin: -10px;">
+                    <p class="title"
+                      style="display: inline; margin-left: 0px; float: right; margin-top: 0px; margin-bottom: 0px">
+                      Boosts for 30 Seconds</p>
+                  </div>
+
+                  <div class="content">
+                    <!-- Content -->
+                  </div>
+                </article>
+
+              </div>
+
+
+
+            </div>
+
+
+            <p class="title is-2" style="display: inline;  margin-left: 10px;">Negative Boosts</p>
+
+            <p class="subtitle" style="display: inline; margin-left: 10px; ">Failing to click on negative boosts loses
+              you seconds</p>
+
+            <div class="container" style="margin-top: 20px">
+
+
+
+              <div class="tile is-ancestor">
+
+
+                <div class="tile is-parent">
+
+                  <article id="" class="tile is-child notification" style="border-radius: 15px;">
+                    <figure class="image flex-center is-96x96"
+                      style="position:absolute; margin-top: 0px; margin-left: 0px;">
+                      <img src="assets/wolverine.png">
+                    </figure>
+
+
+
+                    <div class="vertical-center" style="margin-left: 35px;">
+
+                      <p class="title" style="display: inline; margin-left: 96px;  ">Wolverine (1/1000)</p>
+
+                    </div>
+                    <div class="tile is-child notification is-danger"
+                      style="float: right; padding: 15px; margin: -10px;">
+                      <p class="title"
+                        style="display: inline; margin-left: 0px; float: right; margin-top: 0px; margin-bottom: 0px">
+                        -50 Seconds</p>
+                    </div>
+
+                    <div class="content">
+                      <!-- Content -->
+                    </div>
+                  </article>
+
+                </div>
+
+
+
+              </div>
+
+
+
+              <div class="tile is-ancestor">
+
+
+                <div class="tile is-parent">
+
+                  <article id="" class="tile is-child notification" style="border-radius: 15px;">
+                    <figure class="image flex-center is-96x96"
+                      style="position:absolute; margin-top: 0px; margin-left: 0px;">
+                      <img src="assets/moose.png">
+                    </figure>
+
+
+
+                    <div class="vertical-center" style="margin-left: 35px;">
+
+                      <p class="title" style="display: inline; margin-left: 96px; ">Moose (1/5000)</p>
+
+                    </div>
+                    <div class="tile is-child notification is-danger"
+                      style="float: right; padding: 15px; margin: -10px;">
+                      <p class="title"
+                        style="display: inline; margin-left: 0px; float: right; margin-top: 0px; margin-bottom: 0px">
+                        -500 Seconds</p>
+                    </div>
+
+                    <div class="content">
+                      <!-- Content -->
+                    </div>
+                  </article>
+
+                </div>
+
+
+              </div>
+
+
+
+
+              <div class="tile is-ancestor">
+
+
+                <div class="tile is-parent">
+
+                  <article id="" class="tile is-child notification" style="border-radius: 15px;">
+                    <figure class="image flex-center is-96x96"
+                      style="position:absolute; margin-top: 0px; margin-left: 0px;">
+                      <img src="assets/orca.png">
+                    </figure>
+
+
+
+                    <div class="vertical-center" style="margin-left: 35px;">
+
+                      <p class="title" style="display: inline; margin-left: 96px; ">Orca (1/10000)</p>
+
+                    </div>
+                    <div class="tile is-child notification is-danger"
+                      style="float: right; padding: 15px; margin: -10px;">
+                      <p class="title"
+                        style="display: inline; margin-left: 0px; float: right; margin-top: 0px; margin-bottom: 0px">
+                        -5000 Seconds</p>
+                    </div>
+
+                    <div class="content">
+                      <!-- Content -->
+                    </div>
+                  </article>
+
+                </div>
+
+              </div>
+
+
+
+
+
+
+              <div class="tile is-ancestor">
+
+
+                <div class="tile is-parent">
+
+                  <article id="" class="tile is-child notification" style="border-radius: 15px;">
+                    <figure class="image flex-center is-96x96"
+                      style="position:absolute; margin-top: 0px; margin-top: -25px;">
+                      <img src="assets/global_warming.png">
+                    </figure>
+
+
+
+                    <div class="vertical-center" style="margin-left: 35px;">
+
+                      <p class="title" style="display: inline; margin-left: 96px; ">Global Warming (1/50000)</p>
+
+                    </div>
+                    <div class="tile is-child notification is-danger"
+                      style="float: right; padding: 15px; margin: -10px;">
+                      <p class="title"
+                        style="display: inline; margin-left: 0px; float: right; margin-top: 0px; margin-bottom: 0px">
+                        Penalties for 2 Hours</p>
+                    </div>
+
+                    <div class="content">
+                      <!-- Content -->
+                    </div>
+                  </article>
+
+                </div>
+
+
+
+
+
+
+
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+      </section>
+      <footer class="modal-card-foot" style="background-color: white; border: none; border-radius: 0 0 20px 20px;">
+
+      </footer>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+  </div>
+  </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+<div class="container" style="height: 350px; background-attachment: fixed;">
+</div>
+
+</html>

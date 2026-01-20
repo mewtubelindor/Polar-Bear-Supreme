@@ -1,0 +1,286 @@
+body {
+   background-image: url('assets/background-#.png');
+/*   background-3.jpg */
+  background-repeat: no-repeat;
+  background-size: 101%;
+  background-attachment: fixed;
+}
+
+@keyframes hatch {
+  0% { transform: rotate(0deg); width: 200px; }
+  5% { transform: rotate(-10deg) }
+  10% { transform: rotate(10deg) }
+  15% { transform: rotate(-10deg) }
+  20% { transform: rotate(10deg) }
+  25% { transform: rotate(-10deg) }
+  30% { transform: rotate(10deg) }
+  35% { transform: rotate(-10deg) }
+  40% { transform: rotate(10deg) }
+  45% { transform: rotate(-10deg) }
+  50% { transform: rotate(10deg) }
+  55% { transform: rotate(-10deg) }
+  60% { transform: rotate(10deg) }
+  65% { transform: rotate(-10deg) }
+  70% { transform: rotate(10deg) }
+  75% { transform: rotate(-10deg) }
+  80% { transform: rotate(0deg); width: 290px; opacity: 100% }
+  100% { opacity: 0% }
+}
+
+.hatch {
+  animation-name: hatch;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+
+@keyframes zoom {
+  0% { transform: scale(0) }
+  100% { transform: scale(1) }
+}
+
+.zoom {
+  animation-name: zoom;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+
+@keyframes spinning {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+  }
+  .spin {
+    animation-name: spinning;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    /* linear | ease | ease-in | ease-out | ease-in-out */
+    animation-timing-function: linear;
+  }
+
+ @keyframes scaling {
+    from { transform: scale(1) }
+    to { transform: scale(0.75) }
+  }
+  .scale {
+    animation-name: scaling;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    /* linear | ease | ease-in | ease-out | ease-in-out */
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+  }
+
+
+
+@keyframes fade {
+  from {opacity: 0.7}
+  to {opacity: 1}
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+   animation-iteration-count: infinite;
+}
+
+.line {
+  display: inline;
+  font-size: 2em;
+  color: black;
+}
+
+white {
+  color: white !important;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 3px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #000000;
+  opacity: 80%;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  width: 300px;
+  top: 100%;
+  left: 50%;
+  margin-left: -150px;
+  padding: 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Make the images invisible by default */
+.Containers {
+  display: none;
+}
+
+/* forward & Back buttons */
+.Back, .forward {
+  cursor: pointer;
+  position: absolute;
+  top: 48%;
+  width: auto;
+  margin-top: -23px;
+  padding: 17px;
+  color: gray;
+  font-weight: bold;
+  font-size: 25px;
+  transition: 0.4s ease;
+  border-radius: 0 10px 10px 0;
+  user-select: none;
+}
+
+/* Place the "forward button" to the right */
+.forward {
+  right: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+/*when the user hovers,add a black background with some little opacity */
+.Back:hover, .forward:hover {
+  background-color: #48c774;
+}
+
+/* Caption Info */
+.Info {
+  color: #e3e3e3;
+  font-size: 16px;
+  padding: 10px 14px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Worknumbering (1/3 etc) */
+.MessageInfo {
+  color: #f2f2f3;
+  font-size: 14px;
+  padding: 10px 14px;
+  position: absolute;
+  top: 0;
+}
+
+/* The circles or bullets and indicators */
+.dots {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  margin: 0 3px;
+  background-color: #acc;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+
+.enable, .dots:hover {
+  background-color: #717161;
+}
+
+
+
+.tooltip2 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 3px dotted black;
+}
+
+.tooltip2 .tooltiptext2 {
+  visibility: hidden;
+  background-color: #000000;
+  opacity: 80%;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  width: 150px;
+  top: 100%;
+  left: 50%;
+  margin-left: -75px;
+  padding: 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip2:hover .tooltiptext2 {
+  visibility: visible;
+}
+
+.image-center {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical-center {
+   margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+
+
+.tooltip3 {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.tooltip3 .tooltiptext3 {
+  visibility: hidden;
+  background-color: #000000;
+  opacity: 80%;
+  color: #fff;
+
+  border-radius: 6px;
+  padding: 5px 0;
+  width: 300px;
+  top: 100%;
+  left: 100%;
+  margin-left: -30px;
+  margin-top: 10px;
+  padding: 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip3:hover .tooltiptext3 {
+  visibility: visible;
+}
